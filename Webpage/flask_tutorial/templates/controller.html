@@ -85,8 +85,8 @@
 		</header>
 		<br>
 		<hr>
-		<div class="row" style="max-height:200px; margin-bottom: 30px;">
-			<div class="col-md-6" style="max-height:200px; overflow:auto; max-width:33%; flex: 33% 0 0;">
+		<div class="container" style="max-height:200px; margin-bottom: 30px; display: flex;">
+			<div class="col-md-6" style="justify-content: start;" >
 				<h3>Connection status</h3>
 				<p class="text-danger" v-if="!connected">Not connected!</p>
 				<p class="text-success" v-if="connected">Connected!</p>
@@ -97,7 +97,7 @@
 				<button :disabled="loading" class="btn btn-success" @click="connect" v-else>Connect!</button>
 			</div>
 			
-			<div class="col-md-6" style="max-height:200px; overflow:auto; max-width:33%; flex: 0 33% 0;">
+			<div class="col-md-6" style="justify-content: end;">
 				<h3>Log messages</h3>
 				<div>
 					<!-- <p v-for="log of logs">{{ log }}</p> -->
@@ -109,24 +109,29 @@
 				document.getElementById("result").innerHTML;
 			</script>
 
-			<div class="col-md-6" style="max-height:200px; overflow:auto; max-width:33%; flex: 0 0 33%;">
+			<!-- <div class="col-md-6" style="max-height:200px; overflow:auto; max-width:33%; flex: 0 0 33%;">
 				<h3>Signs of abnormal crops</h3>
 				<form method="POST" id="myform">
 					<input name="multiplier" value="1">
 					<input type="submit" value="Set multiplier">
 				</form>
-			</div>
+			</div> -->
 		</div>
 		
 
 		<!-- 파노라마 카메라 출력창 -->
 		<!-- <div class=container>
 			
-			<img id="my_image" style='height: 80%; width: 80%; object-fit: contain; border: 5px double #5f788a;'>
+			< id="my_image" style='height: 80%; width: 80%; object-fit: contain; border: 5px double #5f788a;'>
 			
 
 			<hr>
 		</div> -->
+		<div class="container" style="justify-content: center;">
+			<video width="500" height="500" controls muted>
+				<source src="../static/KakaoTalk_20201204_010542498.mp4" type="video/mp4">
+			</video>
+		</div>
 		<hr>
 		
 		<div class="row" style="display: flex;">
