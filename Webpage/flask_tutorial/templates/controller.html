@@ -101,7 +101,15 @@
 				<h3>Log messages</h3>
 				<div>
 					<!-- <p v-for="log of logs">{{ log }}</p> -->
-					<p id="log"></p>
+					{% with messages = get_flashed_messages() %}
+						{% if messages %}
+							<ul class=flashes>
+							{% for message in messages %}
+							<li>{{ message }}</li>
+							{% endfor %}
+							</ul>
+						{% endif %}
+					{% endwith %}
 				</div>
 			</div>
 			
@@ -128,7 +136,7 @@
 			<hr>
 		</div> -->
 		<div class="container" style="justify-content: center;">
-			<video width="500" height="500" controls muted>
+			<video width="500" height="500" autoplay muted>
 				<source src="../static/KakaoTalk_20201204_010542498.mp4" type="video/mp4">
 			</video>
 		</div>
